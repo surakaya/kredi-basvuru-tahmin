@@ -1,83 +1,63 @@
-# 💳 Kredi Başvurusu Tahmini – Makine Öğrenmesi Projesi
+💳 Credit Application Prediction – Machine Learning Project
+This project was created to predict whether an individual's credit application would be approved or not.  
+The dataset contains anonymized information about applicants in Germany and was analyzed using classification algorithms.
 
-Bu proje, bireylerin kredi başvurularının onaylanıp onaylanmayacağını tahmin etmek amacıyla yapılmıştır.  
-Veri seti Almanya'daki başvuru sahiplerine ait anonim bilgiler içeriyor ve sınıflandırma algoritmaları kullanılarak analiz edildi.
+🎯 Project Goal
+Banks evaluate the risk of an applicant when granting credit.  
+In this project, we attempted to predict whether an application would be approved based on some provided financial and personal information.
 
----
+📁 Dataset Used
+Source: UCI German Credit Data  
+Total Observations: 1000  
+Target Variable: Credit Approval (1 = Approved, 0 = Rejected)
 
-## 🎯 Projenin Amacı
+🔧 Steps Taken
+- Explored the data and transformed categorical variables appropriately (using `get_dummies`).  
+- Split the data into training and test sets (80% / 20%).  
+- Applied standardization for KNN and SVM (using `StandardScaler`).  
+- Tested 3 different classification algorithms:  
+  - Random Forest ✅  
+  - K-Nearest Neighbors  
+  - Support Vector Machine  
 
-Bankalar, kredi verirken başvuru sahibinin riskini değerlendirir.  
-Bu projede, verilen bazı finansal ve kişisel bilgilere bakarak bir başvurunun **kredi alıp almayacağını tahmin etmeye çalıştık**.
+📊 Results
+The best performance was achieved with Random Forest, reaching an accuracy of approximately 79.5%.
 
----
+| Model          | Accuracy |
+|----------------|----------|
+| Random Forest  | 79.5% ✅ |
+| KNN            | 75.0%    |
+| SVM            | 78.0%    |
 
-## 📁 Kullanılan Veri Seti
+We also observed which features the model focused on the most using a feature importance graph.
 
-- **Kaynak:** [UCI German Credit Data](https://archive.ics.uci.edu/ml/datasets/statlog+(german+credit+data))
-- **Toplam Gözlem:** 1000
-- **Hedef Değişken:** `Kredi Onayı` (1 = Onaylandı, 0 = Reddedildi)
+🧪 Libraries Used
+- pandas, numpy  
+- scikit-learn (for modeling and evaluation)  
+- matplotlib, seaborn (for visualization)
 
----
 
-## 🔧 Uygulanan Adımlar
 
-- Veriyi inceledim ve kategorik verileri uygun şekilde dönüştürdüm (`get_dummies` ile).
-- Eğitim ve test verisini ayırdım (%80 / %20).
-- KNN ve SVM için standartlaştırma uyguladım (`StandardScaler`).
-- 3 farklı sınıflandırma algoritması denedim:
-  - Random Forest ✅
-  - K-Nearest Neighbors
-  - Support Vector Machine
 
----
-
-## 📊 Sonuçlar
-
-En iyi sonucu `Random Forest` verdi. Accuracy değeri yaklaşık **%79.5** oldu.
-
-| Model                | Accuracy |
-|---------------------|----------|
-| Random Forest       | **79.5% ✅** |
-| KNN                 | 75.0%    |
-| SVM                 | 78.0%    |
-  
-Feature importance grafiği ile modelin hangi değişkenlere daha çok dikkat ettiğini de gözlemledim.
-
----
-
-## 🧪 Kullanılan Kütüphaneler
-
-- `pandas`, `numpy`
-- `scikit-learn` (modelleme ve değerlendirme)
-- `matplotlib`, `seaborn` (görselleştirme)
-
----
-
-## 📌 Dosya Yapısı
+📌 File Structure
 
 kredi-basvuru-tahmin/
-│
-├── main.ipynb # Model oluşturma dosyası
+├── main.ipynb             # Model creation notebook
 ├── german_credit_data.csv
-├──classification_report.txt
-├── random_forest_model.pkl # Eğitilmiş modelin kaydı
-└── README.md # Proje açıklaması
+├── classification_report.txt
+├── random_forest_model.pkl # Saved trained model
+└── README.md               # Project description
 
 
----
 
-## 🙋🏻‍♂️ Neden Bu Projeyi Yaptım?
+🙋🏻‍♂️ Why I Did This Project
+I wanted to experiment with classification models on a real dataset as part of my data science journey.  
+I thought that a topic like credit applications is important both in business and technically.  
+Throughout the project, I better understood how to improve model performance and how critical data preprocessing is.
 
-Veri bilimi yolculuğumda sınıflandırma modellerini gerçek bir veri seti üzerinde denemek istedim.  
-Kredi başvurusu gibi bir konunun hem iş dünyasında hem de teknik anlamda önemli olduğunu düşündüm.  
-Proje boyunca model performansını nasıl iyileştirebileceğimi ve veri ön işleme sürecinin ne kadar kritik olduğunu daha iyi anladım.
+👨‍💻 Author
+Şura Kaya  
+Computer Engineering
 
----
 
-## 👨‍💻 Hazırlayan
-
-**Şura Kaya**  
-Bilgisayar Mühendisliği 3. sınıf öğrencisi  
-Veri bilimi, yapay zekâ ve yazılım geliştirme alanlarına ilgim var.
- 
+📌 File Structure
